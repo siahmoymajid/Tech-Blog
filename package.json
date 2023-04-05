@@ -13,6 +13,9 @@
   "scripts": {
     "start": "node server.js"
   },
+  "engines": {
+  "node": "18.x"
+},
   "name": "tech-blog",
   "description": "",
   "version": "1.0.0",

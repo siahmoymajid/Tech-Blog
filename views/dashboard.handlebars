@@ -1,45 +1,43 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+<div class="post-list">
+<h2>{{message}}</h2>
+{{#each posts as |post|}}
+
+<div class="card mb-4">
+  <div class="card-header text-light bg-dark d-flex justify-content-between align-items-center px-4 py-2">
+      <h2 class="fs-4">
+        <a class="link-light" href="/post/{{post.id}}">{{post.title}}</a>
+      </h2>
+     <div class="fs-6">Created by {{post.user.username}} on {{format_date post.createdAt}}</div>
   </div>
+<div class="card-body p-4">
+        {{post.content}}
+    </div>
+<div class="card-footer">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE POST</button>
+
 </div>
+  </div>
+{{/each}}
+</div>
+<hr>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a post:</h3>
+    <h3 class="fs-4">Create a post:</h3>
 
     <form class="form new-post-form">
-      <div class="form-group">
+      <div class="mb-3">
         <label for="post-title"> post title:</label>
-        <input class="form-input" type="text" id="post-title" name="post-title" />
+        <input class="form-control" type="text" id="post-title" name="post-title" />
       </div>
      
-      <div class="form-group">
+      <div class="mb-3">
         <label for="post-content">content:</label>
-        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+        <textarea class="form-control" id="post-content" name="post-content"></textarea>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-dark">Create</button>
       </div>
     </form>
   </div>
-
-  {{#if post.length}}
-  <div class="col-md-6 post-list">
-    <h3>Current Posts:</h3>
-
-    {{#each post as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.username}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-
 <script src="./js/dashboard.js"></script>
