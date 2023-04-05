@@ -30,3 +30,6 @@ A CMS-style blog site can publish articles, blog posts and feedback.
 
 [Sample](/images/Techblog.PNG)
 [Sample](/images/Techblog2.PNG)
+
+## Note
+Tutors have assisted me with this assignment
