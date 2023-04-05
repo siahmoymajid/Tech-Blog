@@ -28,4 +28,5 @@ A CMS-style blog site can publish articles, blog posts and feedback.
 
 ## screenshots
 
-[Sample]()
+[Sample](/images/Techblog.PNG)
+[Sample](/images/Techblog2.PNG)
